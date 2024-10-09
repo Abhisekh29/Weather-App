@@ -140,3 +140,76 @@ body{
     text-align: center;
     font-style: italic;
 }
+
+
+/* Dark Mode Styles */
+body.dark-mode {
+    background-color: #181818; /* Dark background */
+    color: #ffffff; /* Light text */
+}
+
+.weather-input.dark-mode {
+    background: #242424; /* Darker input background */
+}
+
+.weather-output.dark-mode {
+    background: #282828; /* Darker output background */
+}
+
+.input-group input.dark-mode {
+    background-color: #383838; /* Darker input field */
+    color: #ffffff; /* Light text */
+    border: 1px solid #555; /* Optional border for input */
+}
+
+.highlights div.dark-mode,
+.forecast div.dark-mode {
+    background-color: #242424; /* Darker highlight cards */
+    color: #ffffff; /* Light text */
+}
+
+.heading-container {
+    display: flex;
+    justify-content: space-between; /* Align items at opposite edges */
+    align-items: center; /* Vertically center items */
+    
+    padding: 12px; /* Padding around the heading and button */
+}
+
+/* Style the dark mode toggle button */
+#darkModeToggle {
+    background-color: #78c1f3; /* Default background */
+    border: 10px;
+    padding: 10px;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background-color 0.3s ease; /* Smooth transition */
+}
+
+/* Change button color on hover */
+#darkModeToggle:hover {
+    background-color: #5aa9d6;
+}
+
+/* Dark mode styling for the button */
+body.dark-mode #darkModeToggle {
+    background-color: #383838;
+    color: #ffffff;
+}
+
+body.dark-mode #darkModeToggle:hover {
+    background-color: #5e5e5e;
+}
+
+/* Dark mode styles for the dropdown */
+body.dark-mode .input-group .convertor {
+    background-color: #383838; /* Dark background */
+    color: #ffffff; /* Light text color */
+    border-radius: 15%;
+}
+
+/* Dark mode styles for the dropdown options */
+body.dark-mode .input-group .convertor option {
+    background-color: #383838; /* Dark background for options */
+    color: #ffffff; /* Light text color */
+}

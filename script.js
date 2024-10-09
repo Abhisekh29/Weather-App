@@ -92,6 +92,7 @@ function findUserLocation()
 
                 forecast.append(div)
             });
+            applyDarkModeToDynamicElements();
         });
     });
 }
@@ -121,3 +122,54 @@ function tempConvertor(temp){
     }
     return message;
 }
+
+// Dark mode toggle and icon change logic
+
+// Select the dark mode toggle button and the sun/moon icons
+const darkModeToggle = document.getElementById("darkModeToggle");
+const sunIcon = document.getElementById("sunIcon");  // Icon to display when in light mode
+const moonIcon = document.getElementById("moonIcon"); // Icon to display when in dark mode
+
+/**
+ * Applies dark mode styles to dynamically created elements such as forecast tiles and highlight cards.
+ */
+function applyDarkModeToDynamicElements() {
+    const isDarkMode = document.body.classList.contains("dark-mode"); // Check if dark mode is active
+
+    // Apply or remove dark mode class to forecast and highlight cards
+    document.querySelectorAll(".forecast div, .highlights div").forEach(tile => {
+        tile.classList.toggle("dark-mode", isDarkMode);
+    });
+}
+
+/**
+ * Event listener for dark mode toggle button.
+ * This toggles the dark mode for the entire page and adjusts the icons and styles accordingly.
+ */
+darkModeToggle.addEventListener("click", function () {
+    // Toggle dark mode class on body and main container elements
+    document.body.classList.toggle("dark-mode");
+    document.querySelector(".weather-input").classList.toggle("dark-mode");
+    document.querySelector(".weather-output").classList.toggle("dark-mode");
+
+    // Toggle dark mode class for input fields
+    const inputs = document.querySelectorAll(".input-group input");
+    inputs.forEach(input => input.classList.toggle("dark-mode"));
+
+    // Apply dark mode styles to dynamic elements like forecast and highlight cards
+    applyDarkModeToDynamicElements();
+
+    // Toggle the visibility of sun and moon icons based on current mode
+    if (document.body.classList.contains('dark-mode')) {
+        sunIcon.style.display = 'none';  // Hide sun icon when in dark mode
+        moonIcon.style.display = 'inline'; // Show moon icon when in dark mode
+    } else {
+        sunIcon.style.display = 'inline'; // Show sun icon when in light mode
+        moonIcon.style.display = 'none';  // Hide moon icon when in light mode
+    }
+});
+
+
+
+
+

@@ -6,7 +6,7 @@
     <title>Weather App</title>
     <link rel="icon" href="titleicon.png"/> 
     <link rel="stylesheet" href="style.css"/>
-    <!-- Script.js has been moved to the bottom of the body -->
+    <script defer src="script.js"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"/>
 </head>
 <body>
@@ -33,7 +33,13 @@
         </div>
 
         <div class="weather-output">
-            <h2 class="heading">Today's Highlights</h2>
+            <div class="heading-container">
+                <h2 class="heading">Today's Highlights</h2>
+                <div id="darkModeToggle" class="mode-toggle">
+                    <i class="fa fa-sun" id="sunIcon"></i>
+                    <i class="fa fa-moon" id="moonIcon" style="display: none;"></i>
+                </div>
+            </div>
             <div class="highlights">
                 <div class="humidity">
                     Humidity
